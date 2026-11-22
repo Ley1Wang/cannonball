@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Battle</title>
+    <link rel="stylesheet" href="/style.css?v=3">
+    <script src="renderer.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1>Tank Battle</h1>
+    <p id="turn-status" role="status">Loading game…</p>
+   <div class="game-layout">
+    <aside id="blue-panel" class="component-panel blue-panel">
+        <h2>Blue Tank</h2>
+        <p></p>
+    </aside>
+
+    <div class="game-main">
+        <canvas id="gameCanvas" width="1000" height="600"></canvas>
+        <button id="play-again" type="button" hidden>Play Again</button>
+    </div>
+
+    <aside id="orange-panel" class="component-panel orange-panel">
+        <h2>Orange Tank</h2>
+        <p></p>
+    </aside>
+</div>
+</body>
+</html>
