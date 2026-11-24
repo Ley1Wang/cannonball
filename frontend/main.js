@@ -77,7 +77,7 @@ function drawScene() {
         ctx.fill();
     }
 
-
+    //Draw the panel using function
     updateTeamPanel("blue-panel", T0, blueAngle, winner === null && currentPlayer === 0);
     updateTeamPanel("orange-panel", T1, orangeAngle, winner === null && currentPlayer === 1);
 
@@ -95,7 +95,7 @@ function drawScene() {
         ctx.restore();
     }
 }
-
+// function of component label
 function componentLabel(working, turns) {
     if (working === true) return "Operational";
 
@@ -211,6 +211,7 @@ async function fireAndAnimate() {
         shotAnimating = false;
     }
 }
+
 function updateTurnStatus(state) {
     const status = document.getElementById("turn-status");
     const teams = ["Blue", "Orange"];
@@ -230,8 +231,11 @@ function updateTurnStatus(state) {
         status.textContent = message;
     }
 }
+
 // Draw the battlefield immediately while the first game snapshot loads.
 drawScene();
+
+// Event listener for play again button
 playAgainButton.addEventListener("click", async () => {
     playAgainButton.disabled = true;
 
@@ -252,4 +256,5 @@ playAgainButton.addEventListener("click", async () => {
         playAgainButton.disabled = false;
     }
 });
+
 loadGameState().catch(console.error);
