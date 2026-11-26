@@ -3,6 +3,7 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 from pathlib import Path
 from game import Game
+import os
 
 game = Game()
 
@@ -64,4 +65,6 @@ if __name__ == "__main__":
     frontend = Path(__file__).resolve().parent.parent / "frontend"
     print(frontend / "style.css", flush=True)
     handler = partial(GameHandler, directory=str(frontend))
-    HTTPServer(("127.0.0.1", 8000), handler).serve_forever()
+    port = int(os.environ.get("PORT", "8000"))
+    host = "0.0.0.0" if "PORT" in os.environ else "127.0.0.1"
+    HTTPServer((host, port), handler).serve_forever()
